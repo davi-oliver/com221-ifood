@@ -1,0 +1,27 @@
+{% extends "controle_bancario/layout.html" %}
+{% block title %}
+Interface de Abertura de Conta
+{% endblock %}
+{% block content %}
+<h3>Interface para a Abertura de Conta</h3>
+<br>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form method="POST" class="abrirConta-form" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Por favor ingressar os dados do novo cliente:</p>
+    <br>
+    <label>Nome do cliente:</label> <input type="text" id="nomePessoa" name="nomePessoa"> <br><br>
+    <label>CPF do cliente:</label> <input type="text" id="cpfPessoa" name="cpfPessoa"> <br><br>
+    <label>RG do cliente:</label> <input type="text" id="rgPessoa" name="rgPessoa"> <br><br>
+    <label>Data de nascimento:</label> <input type="date" id="dataNascimento" name="dataNascimento"> <br><br>
+    <label>Endereço do cliente:</label> <input type="text" id="enderecoPessoa" name="enderecoPessoa"> <br><br>
+    <label>CEP:</label> <input type="text" id="cepPessoa" name="cepPessoa"> <br><br>
+    <label>Telefone do cliente:</label> <input type="text" id="telefonePessoa" name="telefonePessoa"> <br><br>
+    <label>Renda do cliente:</label> <input type="text" id="rendaPessoa" name="rendaPessoa"> <br><br>
+    <label>Senha da Conta:</label> <input type="password" id="senhaConta" name="senhaConta"> <br><br>
+    <br><br>
+    <button type="submit" class="save btn btn-default">Criar Conta</button>
+</form>
+{% endblock %}
