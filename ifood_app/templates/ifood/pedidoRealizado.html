@@ -1,0 +1,12 @@
+{% extends "ifood/layout.html" %}
+{% block title %}
+Interface de Abertura de Conta
+{% endblock %}
+{% block content %}
+<h3>Seu pedido está a caminho</h3>
+<br>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<h1>Pedido realizado com sucesso!</h1>
+
+{% endblock %}

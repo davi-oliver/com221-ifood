@@ -1,6 +1,6 @@
 {% extends "ifood/layout.html" %}
 {% block title %}
-Interface de Abertura de Conta
+Selecione o produto
 {% endblock %}
 {% block content %}
 <h3>Selecione o produto desejado</h3>
@@ -8,11 +8,11 @@ Interface de Abertura de Conta
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <ul>
-    <li><a href="{% url 'fazerPedido' %}" class="navbar-item">Produto 1</a></li>
-    <li><a href="{% url 'fazerPedido' %}" class="navbar-item">Produto 1</a></li>
-    <li><a href="{% url 'fazerPedido' %}" class="navbar-item">Produto 1</a></li>
-    <li><a href="{% url 'fazerPedido' %}" class="navbar-item">Produto 1</a></li>
-    <li><a href="{% url 'fazerPedido' %}" class="navbar-item">Produto 1</a></li>
+    <li><a href="{% url 'cadastrarEndereco' %}" class="navbar-item">Produto 1</a></li>
+    <li><a href="{% url 'cadastrarEndereco' %}" class="navbar-item">Produto 2</a></li>
+    <li><a href="{% url 'cadastrarEndereco' %}" class="navbar-item">Produto 3</a></li>
+    <li><a href="{% url 'cadastrarEndereco' %}" class="navbar-item">Produto 4</a></li>
+    <li><a href="{% url 'cadastrarEndereco' %}" class="navbar-item">Produto 5</a></li>
 </ul>
 
 {% endblock %}

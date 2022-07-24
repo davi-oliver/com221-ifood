@@ -1,17 +1,23 @@
 {% extends "ifood/layout.html" %}
 {% block title %}
-Interface de Abertura de Conta
+Finalize o seu pedido
 {% endblock %}
 {% block content %}
-<h3>Lojas</h3>
+<h3>Finalize seu pedido</h3>
 <br>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form method="POST" class="abrirConta-form" action="">
+<form method="POST" class="fazerPedido-form" action="">
     {% csrf_token %}
     {{ form.as_p }}
     <p>Realize seu pedido:</p>
 
-    <button type="submit" class="save btn btn-default">Criar Conta</button>
+    <select name="metodoPagamento" id="metodoPagamento"> 
+        <option value="cartaoCredito">Cartão de Crédito</option>
+        <option value="boleto">Boleto</option>
+        <option value="pix">Pix</option>
+    </select>
+
+    <button type="submit" class="save btn btn-default">Finalizar Pedido</button>
 </form>
 {% endblock %}
