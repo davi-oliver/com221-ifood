@@ -13,7 +13,7 @@ from ifood_app.models import PessoaFisica
 
 def home(request):
     #método executado quando o usuário está na interface (tela) inicial do sistema  home.html
-    return render(request, "ifood/home.html")
+    return render(request, "ifood/abrirConta.html")
 
 def abrirConta(request):
     # verifica se a solicitação (request) contém dados (envio usando o metodo POST)
@@ -31,7 +31,7 @@ def abrirConta(request):
         #4 - realizar a abertura de conta para o cliente
 
         #6 - redireciona para a tela de realizar depósito, onde o usuário será redirecionado à interface de usuário do UC Realizar Depósito
-        return redirect("cadastrarEndereco")
+        return redirect("selecionarFornecedor")
 
     else:  
         # a solicitação (request) não contém dados (solicitação feita usando o metodo GET)
@@ -48,3 +48,12 @@ def registrarCliente(request):
 
 def cadastrarEndereco(request):
     return render(request, "ifood/cadastrarEndereco.html")
+
+def selecionarFornecedor(request):
+    return render(request, "ifood/selecionarFornecedor.html")
+
+def fazerPedido(request):
+    return render(request, "ifood/fazerPedido.html")
+
+def selecionarProduto(request):
+    return render(request, "ifood/selecionarProduto.html")

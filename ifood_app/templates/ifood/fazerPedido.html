@@ -1,0 +1,17 @@
+{% extends "ifood/layout.html" %}
+{% block title %}
+Interface de Abertura de Conta
+{% endblock %}
+{% block content %}
+<h3>Lojas</h3>
+<br>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form method="POST" class="abrirConta-form" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Realize seu pedido:</p>
+
+    <button type="submit" class="save btn btn-default">Criar Conta</button>
+</form>
+{% endblock %}

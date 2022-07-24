@@ -3,21 +3,16 @@
 Interface de Abertura de Conta
 {% endblock %}
 {% block content %}
-<h3>Interface para a Abertura de Conta</h3>
+<h3>Lojas</h3>
 <br>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form method="POST" class="abrirConta-form" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <p>Por favor ingreEEssar os dados do novo cliente:</p>
-    <br>
-    <label>Nome do cliente:</label> <input type="text" id="nomePessoa" name="nomePessoa"> <br><br>
-    <label>CPF do cliente:</label> <input type="text" id="cpfPessoa" name="cpfPessoa"> <br><br>
-    <label>Data de nascimento:</label> <input type="date" id="dataNascimento" name="dataNascimento"> <br><br>
-    <label>Telefone do cliente:</label> <input type="text" id="telefonePessoa" name="telefonePessoa"> <br><br>
-    <label>Senha da Conta:</label> <input type="password" id="senhaPessoa" name="senhaPessoa"> <br><br>
-    <br><br>
-    <button type="submit" class="save btn btn-default">Criar Conta</button>
-</form>
+<ul>
+    <li><a href="{% url 'selecionarProduto' %}" class="navbar-item">Restaurante</a></li>
+    <li><a href="{% url 'selecionarProduto' %}" class="navbar-item">Restaurante</a></li>
+    <li><a href="{% url 'selecionarProduto' %}" class="navbar-item">Restaurante</a></li>
+    <li><a href="{% url 'selecionarProduto' %}" class="navbar-item">Restaurante</a></li>
+    <li><a href="{% url 'selecionarProduto' %}" class="navbar-item">Restaurante</a></li>
+</ul>
+
 {% endblock %}
