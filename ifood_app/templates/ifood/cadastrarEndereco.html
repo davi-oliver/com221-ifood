@@ -1,0 +1,23 @@
+{% extends "ifood/layout.html" %}
+{% block title %}
+Interface de Abertura de Conta
+{% endblock %}
+{% block content %}
+<h3>Interface para a Cadastro de Endereço</h3>
+<br>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form method="POST" class="cadastrarEndereco-form" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Por favor, cadastrar os dados de endereço:</p>
+    <br>
+    <label>Rua:</label> <input type="text" id="rua" name="rua"> <br><br>
+    <label>Bairro:</label> <input type="text" id="bairro" name="bairro"> <br><br>
+    <label>Complemento:</label> <input type="text" id="complemento" name="complemento"> <br><br>
+    <label>Cidade:</label> <input type="text" id="cidade" name="cidade"> <br><br>
+    <label>Estado:</label> <input type="text" id="estado" name="estado"> <br><br>
+    <br><br>
+    <button type="submit" class="save btn btn-default">Cadastrar Endereco</button>
+</form>
+{% endblock %}
