@@ -7,17 +7,13 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.utils import timezone
 
-#importações dos modelos (classes) necessários para o UC Abrir Conta
 from ifood_app.models import Endereco, Pedido, PessoaFisica
 
-# Create your views here.
 
 def home(request):
-    #método executado quando o usuário está na interface (tela) inicial do sistema  home.html
     return render(request, "ifood/abrirConta.html")
 
 def abrirConta(request):
-    # verifica se a solicitação (request) contém dados (envio usando o metodo POST)
     if request.method == "POST":
         cliente = registrarCliente(request)
         return redirect("selecionarFornecedor")
@@ -35,14 +31,14 @@ def registrarCliente(request):
         
 def fazerPedido(request):
     if request.method == "POST":
-        cliente = registrarPedido(request)
+        pedido = registrarPedido(request)
         return redirect("pedidoRealizado")
 
     else:  
          return render(request, "ifood/fazerPedido.html")
 
 def registrarPedido(request):
-     cliente = Pedido(metodoPagamento = request.POST['metodoPagamento'])
+     cliente = Pedido(metodoPagamento = request.POST['metodoPagamento'], observacoes = request.POST['observacoes'], cupom = request.POST['cupom'])
      cliente.registrarPedido()
      return cliente
 
@@ -50,7 +46,6 @@ def registrarPedido(request):
 
 
 def cadastrarEndereco(request):
-    # verifica se a solicitação (request) contém dados (envio usando o metodo POST)
     if request.method == "POST":
         endereco = registroEndereco(request)
         return redirect("fazerPedido")
@@ -71,7 +66,6 @@ def rotaPedido(request):
 
 def selecionarProduto(request):
     return render(request, "ifood/selecionarProduto.html")
-
-    
+ 
 def pedidoRealizado(request):
     return render(request, "ifood/pedidoRealizado.html")

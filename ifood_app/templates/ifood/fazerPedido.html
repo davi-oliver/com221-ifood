@@ -12,12 +12,15 @@ Finalize o seu pedido
     {{ form.as_p }}
     <p>Realize seu pedido:</p>
 
+    <label>Selecione o Método de Pagamento</label>
     <select name="metodoPagamento" id="metodoPagamento"> 
+        <option value="boleto">Pagar na Entrega</option>
         <option value="cartaoCredito">Cartão de Crédito</option>
-        <option value="boleto">Boleto</option>
+        <option value="boleto">Cartão de Débito</option>
         <option value="pix">Pix</option>
-    </select>
-
+    </select> <br> <br>
+    <label>Cupom:</label> <input type="text" id="cupom" name="cupom"> <br><br>
+    <label>Observações:</label> <input type="text" id="observacoes" name="observacoes"> <br><br>
     <button type="submit" class="save btn btn-default">Finalizar Pedido</button>
 </form>
 {% endblock %}
